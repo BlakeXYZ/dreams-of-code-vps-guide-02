@@ -31,7 +31,14 @@ ssh-keygen -t ed25519 -C "your_email@example.com"
 ssh-copy-id -i ~/.ssh/id_ed25519.pub newuser@your-server-ip
 
 # Test key-based login
+ssh root@your-server-ip # ensure root is disabled
 ssh newuser@your-server-ip
+```
+
+## 3. Edit DNS Records 
+```
+# Remove DNS A + CNAME
+# Check if DNS Record has propagated and DNS resolves to new IP
 ```
 
 ## 3. Harden SSH
