@@ -64,9 +64,11 @@ sudo nano /etc/ssh/sshd_config
 # UsePAM no
 # PermitRootLogin no # Disable root login
 
-# HOSTINGER ssh auth
-sudo nano /etc/ssh/sshd_config.d/50-cloud-init.conf
-# PasswordAuthentication no  
+# HOSTINGER ssh auth 
+  sudo nano /etc/ssh/sshd_config.d/50-cloud-init.conf
+
+  # Modify the following in the file:
+  # PasswordAuthentication no  
 
 # Restart SSH service
 sudo systemctl restart ssh
