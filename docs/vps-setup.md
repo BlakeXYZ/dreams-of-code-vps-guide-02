@@ -100,8 +100,8 @@ sudo ufw show added
 # Enable UFW
 sudo ufw enable
 
-# Check UFW status
-sudo ufw status
+# Check UFW status 
+sudo ufw status verbose # verbose prints out default incoming + outgoing
 
 # Continue to reverse-proxy integration
 (nginx or recommended: traefik)
