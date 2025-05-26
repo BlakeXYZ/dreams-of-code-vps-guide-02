@@ -89,9 +89,13 @@ ssh -i ~/.ssh/id_hostinger_vps_01 newuser@your-server-ip
 sudo apt install ufw
 
 # Allow necessary ports
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
 sudo ufw allow OpenSSH    # SSH
 sudo ufw allow 80/tcp     # HTTP
 sudo ufw allow 443/tcp    # HTTPS
+
+sudo ufw show added
 
 # Enable UFW
 sudo ufw enable
