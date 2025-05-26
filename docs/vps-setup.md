@@ -105,6 +105,7 @@ sudo ufw status verbose # verbose prints out default incoming + outgoing
 
 # Continue to reverse-proxy integration
 (nginx or recommended: traefik)
+https://youtu.be/F-9KWQByeU0?si=MQk0ztNjmDaWYVki&t=985
 ```
 
 ## 6. (Optional) Install and Configure Fail2Ban
