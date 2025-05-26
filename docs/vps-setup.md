@@ -51,6 +51,9 @@ add:
 # Check if DNS Record has propagated and DNS resolves to new IP
 # inside of ssh:
 nslookup <your-domain-name.com>
+
+# (after step 4. and hardening) test SSH with domain name
+ssh -i ~/.ssh/id_hostinger_vps_01 newuser@<your-domain-name.com>
 ```
 
 ## 4. Harden SSH
