@@ -43,6 +43,7 @@ sudo nano /etc/ssh/sshd_config
 # Modify the following in the file:
 # PermitRootLogin no # Disable root login
 # PasswordAuthentication no  # Disable password based auth
+# UsePAM no
 
 # Restart SSH service
 sudo systemctl restart ssh
