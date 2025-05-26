@@ -102,6 +102,9 @@ sudo ufw enable
 
 # Check UFW status
 sudo ufw status
+
+# Continue to reverse-proxy integration
+(nginx or recommended: traefik)
 ```
 
 ## 6. (Optional) Install and Configure Fail2Ban
