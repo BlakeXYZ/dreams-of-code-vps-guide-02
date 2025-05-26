@@ -37,11 +37,23 @@ ssh newuser@your-server-ip
 
 ## 3. Edit DNS Records 
 ```
-# Remove DNS A + CNAME
+# Remove DNS A + CNAME (I'm using namecheap as domain provider)
+https://ap.www.namecheap.com/Domains/DomainControlPanel/hamburgersvshotdogs.com/advancedns
+
+# in HOST RECORDS section
+remove all records
+add:
+  Type-A Record
+  Host-@
+  Value-<vps-ip-address>
+  TTL-5min 
+
 # Check if DNS Record has propagated and DNS resolves to new IP
+# inside of ssh:
+nslookup <your-domain-name.com>
 ```
 
-## 3. Harden SSH
+## 4. Harden SSH
 
 ```
 # Open SSH configuration file
@@ -60,10 +72,13 @@ sudo nano /etc/ssh/sshd_config.d/50-cloud-init.conf
 sudo systemctl restart ssh
 
 # Test SSH with new settings before logging out
-ssh newuser@your-server-ip
+ssh newuser@your-server-ip 
+(above did not work for me, maybe cause of custom .ssh pub name, so I have to enter the following:)
+ssh -i ~/.ssh/id_hostinger_vps_01 newuser@your-server-ip 
+
 ```
 
-## 4. Set Up a Firewall (UFW)
+## 5. Set Up a Firewall (UFW)
 ```
 # Install UFW if not already installed
 sudo apt install ufw
@@ -80,7 +95,7 @@ sudo ufw enable
 sudo ufw status
 ```
 
-## 5. (Optional) Install and Configure Fail2Ban
+## 6. (Optional) Install and Configure Fail2Ban
 
 ```
 # Install Fail2Ban
