@@ -1,9 +1,10 @@
 # VPS Setup
 
-If you want to set up a production ready VPS, there are a few steps you should take.
+"If you want to set up a production ready VPS, there are a few steps you should take.
+This document goes through the list of steps that I personally take." - dreams-of-code
 
-This document goes through the list of steps that I personally take.
-
+https://www.youtube.com/watch?v=F-9KWQByeU0
+https://www.youtube.com/watch?v=fuZoxuBiL9o
 
 ## 1. Create a New User with Sudo Permissions
 ```
