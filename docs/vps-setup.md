@@ -111,6 +111,9 @@ https://youtu.be/F-9KWQByeU0?si=MQk0ztNjmDaWYVki&t=985
 ```
 https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
 
+# on step 2 reduce bloat by:
+sudo apt-get install docker-ce docker-ce-cli containerd.io -----#reduce bloat by not running= 'docker-buildx-plugin docker-compose-plugin'
+
 # Confirm Proper Install
 run 'sudo docker run hello-world'. A good way to confirm Docker is setup properly!
 run 'sudo docker ps'
@@ -143,7 +146,14 @@ This workflow supports
 - Clustering
 
 
+# Deploy webapp remotely
+# Change Docker Host to that of our VPS using Docker Contexts
+# https://docs.docker.com/engine/manage-resources/contexts/
+# https://youtu.be/fuZoxuBiL9o?si=gKUty9Toy_dBVmp3&t=543
 
+docker context create <name-of-webapp-site> --docker <define-endpoint-to-that-of-ssh-endpoint>
+ex:
+docker context create my-webapp-site --docker "host=ssh://blake@mywebapp.com"
 
 
 ```
