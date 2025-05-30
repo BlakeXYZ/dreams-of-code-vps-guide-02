@@ -107,8 +107,17 @@ sudo ufw status verbose # verbose prints out default incoming + outgoing
 (nginx or recommended: traefik)
 https://youtu.be/F-9KWQByeU0?si=MQk0ztNjmDaWYVki&t=985
 ```
+## 6. Install Docker + Docker Compose on VPS
+```
+https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
 
-## 6. (Optional) Install and Configure Fail2Ban
+(final step in setup has your run 'sudo docker run hello-world'. A good way to confirm Docker is setup properly!)
+
+```
+
+
+
+## (Optional) Install and Configure Fail2Ban
 
 ```
 # Install Fail2Ban
