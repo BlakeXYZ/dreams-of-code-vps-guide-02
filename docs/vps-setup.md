@@ -92,7 +92,7 @@ nano ~/.ssh/config
 # Add config (example below:)
 Host burgvps
     HostName burgvshotdogs.com
-    User blake
+    User newuser
     IdentityFile ~/.ssh/id_vps_01
     IdentitiesOnly yes
 
@@ -171,7 +171,7 @@ This workflow supports
 
 docker context create <name-of-webapp-site> --docker <define-endpoint-to-that-of-ssh-endpoint>
 ex:
-docker context create my-webapp-site --docker "host=ssh://blake@mywebapp.com"
+docker context create my-webapp-site --docker "host=ssh://newuser@mywebapp.com"
 
 
 ```
