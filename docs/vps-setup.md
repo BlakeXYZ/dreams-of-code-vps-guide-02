@@ -129,6 +129,8 @@ docker ps
 
 ## 7. Setup Docker Image using Docker Stack + Compose
 ```
+https://www.youtube.com/watch?v=fuZoxuBiL9o
+
 Docker Stack allows you to deploy your Docker Compose onto a node that has Docker Swarm enabled
 
 This workflow supports
@@ -137,7 +139,13 @@ This workflow supports
 - Secure Secrets
 - Rollbacks
 - Remote Deploys
+- CI/CD using GitActions
 - Clustering
+
+
+
+
+
 ```
 
 
