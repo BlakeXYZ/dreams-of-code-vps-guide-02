@@ -173,6 +173,10 @@ docker context create <name-of-webapp-site> --docker <define-endpoint-to-that-of
 ex:
 docker context create my-webapp-site --docker "host=ssh://newuser@mywebapp.com"
 
+# Now can use docker context use, and any commands then will take place in the Docker Instance inside our VPS!
+# allowing us to configure remotely
+docker context use my-webapp-site
+docker context show #--show name of current context
 
 ```
 
