@@ -111,9 +111,35 @@ https://youtu.be/F-9KWQByeU0?si=MQk0ztNjmDaWYVki&t=985
 ```
 https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
 
-(final step in setup has your run 'sudo docker run hello-world'. A good way to confirm Docker is setup properly!)
+# Confirm Proper Install
+run 'sudo docker run hello-world'. A good way to confirm Docker is setup properly!
+run 'sudo docker ps'
+
+# If its not running, set system control cmd:
+sudo systemctl enable docker
+
+# Add user name to docker group to prevent sudo requirement: 
+# https://docs.docker.com/engine/install/linux-postinstall/
+sudo usermod -aG docker $USER
+# relogin to have permissions take affect
+exit
+docker ps
 
 ```
+
+## 7. Setup Docker Image using Docker Stack + Compose
+```
+Docker Stack allows you to deploy your Docker Compose onto a node that has Docker Swarm enabled
+
+This workflow supports
+- Blue/Green deployment
+- Rolling releases
+- Secure Secrets
+- Rollbacks
+- Remote Deploys
+- Clustering
+```
+
 
 
 
