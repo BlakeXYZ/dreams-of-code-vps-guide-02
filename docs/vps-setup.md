@@ -83,6 +83,24 @@ ssh -i ~/.ssh/id_hostinger_vps_01 newuser@your-server-ip
 
 ```
 
+## 4.1. Setup Local Machine Docker SSH Config + SSH-Agent 
+## for ssh ease of use
+```
+# Create ssh config
+nano ~/.ssh/config
+
+# Add config (example below:)
+Host burgvps
+    HostName burgvshotdogs.com
+    User blake
+    IdentityFile ~/.ssh/id_vps_01
+    IdentitiesOnly yes
+
+# use ssh agent to start the day
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_hostinger_vps_01
+```
+
 ## 5. Set Up a Firewall (UFW)
 ```
 # Install UFW if not already installed
