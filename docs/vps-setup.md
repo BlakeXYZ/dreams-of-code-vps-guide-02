@@ -179,6 +179,14 @@ docker context create my-webapp-site --docker "host=ssh://newuser@mywebapp.com"
 docker context use my-webapp-site
 docker context show #--show name of current context
 
+
+# Enable Docker Swarm on VPS
+docker swarm init
+# upon running cmd, will receive token allowing to connect other VPS instances to this machine (in order to form a Docker Swarm Cluster)
+# can easily obtain token
+
+# With swarm mode enabled, can now deploy our App using Docker Stack Deploy Cmd, passing path to docker compose .yml and name of stack
+
 ```
 
 
