@@ -256,16 +256,13 @@ secrets:
 # create new user in vps
 adduser <new-user-name>
 
-# Add the user to the sudo group
-usermod -aG docker <new-user-name>
-
 # Test the new user
 su - <new-user-name>
 sudo apt update
 
 # Add user name to docker group to prevent sudo requirement: 
 # https://docs.docker.com/engine/install/linux-postinstall/
-sudo usermod -aG docker $USER
+sudo usermod -aG docker <new-user-name>
 # relogin to have permissions take affect
 exit
 docker ps
