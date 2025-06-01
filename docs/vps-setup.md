@@ -287,6 +287,11 @@ nano .ssh/authorized_keys
 # add following text before the ssh key
 command="docker system dial-stdio" #-- this restricts user to only able to perform 'docker stack deploy' command when using ssh with this key
 
+# Login on the VPS as deploy user
+# Make sure you SSH in (or use Docker context shell) and log in to ghcr.io with a token
+# See Step 6.1
+echo "<PAT>" | docker login ghcr.io -u <github-username> --password-stdin
+
 # can try running docker stack deploy now. example:
 # make sure to change docker context to using new deploy user for endpoint! 
 blake@LAPTOP-U8PV5H9S:/mnt/c/users/blake/.../dreams-of-code-vps-guide-02$ docker stack deploy -c docker-stack.yml <name-of-stack>
