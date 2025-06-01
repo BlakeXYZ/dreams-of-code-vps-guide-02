@@ -262,6 +262,13 @@ usermod -aG docker <new-user-name>
 # Test the new user
 su - <new-user-name>
 sudo apt update
+
+# Add user name to docker group to prevent sudo requirement: 
+# https://docs.docker.com/engine/install/linux-postinstall/
+sudo usermod -aG docker $USER
+# relogin to have permissions take affect
+exit
+docker ps
 ```
 
 
