@@ -12,13 +12,13 @@ https://www.youtube.com/watch?v=fuZoxuBiL9o
 ssh root@your-server-ip
 
 # Create a new user
-adduser newuser
+adduser <new-user-name>
 
 # Add the user to the sudo group
-usermod -aG sudo newuser
+usermod -aG sudo <new-user-name>
 
 # Test the new user
-su - newuser
+su - <new-user-name>
 sudo apt update
 ```
 
@@ -253,7 +253,15 @@ secrets:
 ```
 # https://youtu.be/fuZoxuBiL9o?si=otffAoUjvbXUUBdM&t=1213
 
+# create new user in vps
+adduser <new-user-name>
 
+# Add the user to the sudo group
+usermod -aG docker <new-user-name>
+
+# Test the new user
+su - <new-user-name>
+sudo apt update
 ```
 
 
