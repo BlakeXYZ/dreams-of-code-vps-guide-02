@@ -186,9 +186,27 @@ docker swarm init
 # can easily obtain token
 
 # With swarm mode enabled, can now deploy our App using Docker Stack Deploy Cmd, passing path to docker compose .yml and name of stack
+https://youtu.be/fuZoxuBiL9o?si=BmLaBjpVd-Llnrnh&t=678
 
 ```
 
+## 8. Docker Secret setup
+```
+# Create new secret
+docker secret create <name-of-secret>
+
+# load in through file OR through stdin
+docker secret create db-password -./passwords.txt
+# using stdin with printf
+printf 'mysecretpassword' | docker secret create db-password -
+# view secrets by running
+docker secret ls
+docker secret inspect <secret-ID>
+
+# store secret in another safe spot
+https://youtu.be/fuZoxuBiL9o?si=nc5AebGJCx_n5q3e&t=904
+
+```
 
 
 
