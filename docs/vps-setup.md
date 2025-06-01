@@ -25,11 +25,17 @@ sudo apt update
 
 ## 2. Set Up SSH Key Authentication
 ```
-# On your local machine, generate an SSH key pair if you don’t already have one
-ssh-keygen -t ed25519 -C "your_email@example.com"
+# On your local machine (in ubuntu terminal), generate an SSH key pair if you don’t already have one
+# cd to .ssh 
+# ~/.ssh
+ssh-keygen -t ed25519 -C "<ssh_id_name>"
+# file in which to save?
+<ssh_id_name>
+# enter passphrase?
+# enter + save inside keepass
 
-# Copy the SSH key to the new user on the server
-ssh-copy-id -i ~/.ssh/id_ed25519.pub newuser@your-server-ip
+# Copy the public SSH key to the new user on the server
+ssh-copy-id -i ~/.ssh/<ssh_id_name>.pub <username>@your-server-ip
 
 # Test key-based login
 ssh root@your-server-ip # ensure root is disabled
@@ -266,6 +272,15 @@ groups <new-user-name> # to check current groups
 # relogin to have permissions take affect
 exit
 docker ps
+
+# after generating ssh key 
+# copy .pub file to clipboard on local machine in ubuntu terminal
+wl-copy < <ssh_id_name>.pub
+
+# build .ssh dir in vps
+su - deploy
+mkdir .ssh
+echo '<pasted-wl-copy-ssh-pub-key>' > .ssh/authorized_keys
 ```
 
 
