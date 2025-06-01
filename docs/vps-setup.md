@@ -126,6 +126,8 @@ sudo ufw status verbose # verbose prints out default incoming + outgoing
 (nginx or recommended: traefik)
 https://youtu.be/F-9KWQByeU0?si=MQk0ztNjmDaWYVki&t=985
 ```
+
+
 ## 6. Install Docker + Docker Compose on VPS
 ```
 https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
@@ -149,7 +151,7 @@ docker ps
 
 ```
 
-## 7. Setup Docker Image using Docker Stack + Compose
+## 7.Remote Deployment -- Setup Docker Image using Docker Stack + Compose
 ```
 https://www.youtube.com/watch?v=fuZoxuBiL9o
 
@@ -187,6 +189,7 @@ docker swarm init
 
 # With swarm mode enabled, can now deploy our App using Docker Stack Deploy Cmd, passing path to docker compose .yml and name of stack
 https://youtu.be/fuZoxuBiL9o?si=BmLaBjpVd-Llnrnh&t=678
+docker stack deploy -c ./compose.yaml <name-of-stack>
 
 ```
 
@@ -205,6 +208,18 @@ docker secret inspect <secret-ID>
 
 # store secret in another safe spot
 https://youtu.be/fuZoxuBiL9o?si=nc5AebGJCx_n5q3e&t=904
+
+# In docker compose.yaml + docker stack.yaml, define secret as external
+secrets:
+  db-password:
+    external: true
+
+```
+
+## 9. Automated Deployments
+```
+# https://youtu.be/fuZoxuBiL9o?si=otffAoUjvbXUUBdM&t=1213
+
 
 ```
 
