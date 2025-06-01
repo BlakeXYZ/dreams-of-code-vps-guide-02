@@ -151,6 +151,38 @@ docker ps
 
 ```
 
+## 6.1 Git Hub Container Registry + GH Personal Access Token setup (GHCR + PAT)
+```
+https://youtu.be/gqseP_wTZsk?si=TY-p0vGc51AkqSY2
+
+# Guide to Pushing Docker Images to Github to be easily accessible
+# Build local image (in vscode project powershell terminal)
+# Runs *Dockerfile* instructions
+docker build -t <image-name> .
+
+# once built, confirm it exists
+docker images
+
+# Generate Personal Access Token
+https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#authenticating-with-a-personal-access-token-classic
+https://youtu.be/gqseP_wTZsk?si=wKbIKz0TOczsiiF0&t=196
+
+# Set PAT Token as a control panel User Env Var, access by running in linux:
+cmd.exe /C "echo %<ENV-VAR>%"
+
+# docker login using env var
+echo "<PAT>" | docker login ghcr.io -u <github-username> --password-stdin
+# should show 'login succeeded"
+
+# Now get ready to push to GHCR
+docker tag <image-name> ghcr.io/<github-username>/<image-name>:latest
+docker push ghcr.io/<github-username>/<image-name>:latest
+
+# to link this Docker image directly to a repository, add the following to Dockerfile
+LABEL org.opencontainers.image.source=https://github.com/<github-username>/<repo-name>
+
+```
+
 ## 7.Remote Deployment -- Setup Docker Image using Docker Stack + Compose
 ```
 https://www.youtube.com/watch?v=fuZoxuBiL9o
