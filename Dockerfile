@@ -10,7 +10,7 @@
 # Create a stage for building the application.
 ARG GO_VERSION=1.23.2
 FROM --platform=$BUILDPLATFORM golang:${GO_VERSION} AS build
-LABEL org.opencontainers.image.source=https://github.com/dreamsofcode-io/zenstats
+# LABEL org.opencontainers.image.source=https://github.com/dreamsofcode-io/zenstats
 WORKDIR /src
 
 RUN curl -sLO https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-linux-x64
