@@ -281,6 +281,13 @@ wl-copy < <ssh_id_name>.pub
 su - deploy
 mkdir .ssh
 echo '<pasted-wl-copy-ssh-pub-key>' > .ssh/authorized_keys
+
+# restrict deploy user commands usable on ssh
+nano .ssh/authorized_keys
+# add following text before the ssh key
+command="docker system dial-stdio" #-- this restricts user to only able to perform 'docker stack deploy' command when using ssh with this key
+
+# with that, ready to add this private key to github repo
 ```
 
 
