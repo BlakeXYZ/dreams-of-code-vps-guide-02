@@ -257,7 +257,7 @@ secrets:
 
 ## 9. Automated Deployments
 ```
-# Basically rebuilding a whole new User but with only access to GitHub Docker Deployment commands in SSH
+# Basically rebuilding a whole new VPS User but with only access to GitHub Docker Deployment commands in SSH
 # https://youtu.be/fuZoxuBiL9o?si=otffAoUjvbXUUBdM&t=1213
 
 # create new user in vps
