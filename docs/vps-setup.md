@@ -230,6 +230,13 @@ docker swarm init
 https://youtu.be/fuZoxuBiL9o?si=BmLaBjpVd-Llnrnh&t=678
 docker stack deploy -c ./compose.yaml <name-of-stack>
 
+# To Delete/Clear up docker stack that you dont want run:
+docker stack ls
+docker stack rm <docker-stack-name>
+docker system prune -a --volumes #-- removes any leftover resources
+
+ 
+
 ```
 
 ## 8. Docker Secret setup
