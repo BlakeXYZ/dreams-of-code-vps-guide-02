@@ -257,6 +257,7 @@ secrets:
 
 ## 9. Automated Deployments
 ```
+# Basically rebuilding a whole new User but with only access to GitHub Docker Deployment commands in SSH
 # https://youtu.be/fuZoxuBiL9o?si=otffAoUjvbXUUBdM&t=1213
 
 # create new user in vps
@@ -273,6 +274,9 @@ groups <new-user-name> # to check current groups
 exit
 docker ps
 
+# Generate SSH Key
+# See Step 2.
+
 # after generating ssh key 
 # copy .pub file to clipboard on local machine in ubuntu terminal
 wl-copy < <ssh_id_name>.pub
@@ -282,15 +286,33 @@ su - deploy
 mkdir .ssh
 echo '<pasted-wl-copy-ssh-pub-key>' > .ssh/authorized_keys
 
+# Login on the VPS as deploy user
+# Make sure you SSH in (or use Docker context shell) and log in to ghcr.io with a token. 
+# See Step 6.1
+# This allows us to grab private GHCR keys
+echo "<PAT>" | docker login ghcr.io -u <github-username> --password-stdin
+
+# docker context create workaround for VPS connection 
+
+# see steps 4.1 to build config!
+# Host <deploy-<webapp-name>>
+## User deploy (or whatever you named for secured deploy vps account)
+## 4.1. Setup Local Machine Docker SSH Config + SSH-Agent 
+## for ssh ease of use
+
+# see steps 7 for new context create!
+# docker context create my-webapp-site --docker "host=ssh://<deploy-<webapp-name>>"
+# eg: docker context inspect:
+        "Endpoints": {
+            "docker": {
+                "Host": "ssh://<deploy-<webapp-name>>",
+                "SkipTLSVerify": false
+            }
+
 # restrict deploy user commands usable on ssh
 nano .ssh/authorized_keys
 # add following text before the ssh key
 command="docker system dial-stdio" #-- this restricts user to only able to perform 'docker stack deploy' command when using ssh with this key
-
-# Login on the VPS as deploy user
-# Make sure you SSH in (or use Docker context shell) and log in to ghcr.io with a token
-# See Step 6.1
-echo "<PAT>" | docker login ghcr.io -u <github-username> --password-stdin
 
 # can try running docker stack deploy now. example:
 # make sure to change docker context to using new deploy user for endpoint! 
