@@ -327,6 +327,7 @@ blake@LAPTOP-U8PV5H9S:/mnt/c/users/blake/.../dreams-of-code-vps-guide-02$ docker
 
 
 # with that, ready to add this private key to github repo
+https://youtu.be/fuZoxuBiL9o?si=JG_fRPCKpa0ImBLf&t=1461
 ```
 
 
