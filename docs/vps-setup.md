@@ -232,6 +232,10 @@ docker stack deploy -c ./docker-stack.yaml <name-of-stack>
 # for private GHCR package
 docker stack deploy --with-registry-auth -c ./docker-stack.yaml <name-of-stack>
 
+# to view all containers and confirm stack is good
+docker ps -a
+docker service ls
+
 # To Delete/Clear up docker stack that you dont want run:
 docker stack ls
 docker stack rm <docker-stack-name>
