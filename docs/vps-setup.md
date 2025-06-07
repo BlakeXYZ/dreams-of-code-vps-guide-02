@@ -229,6 +229,8 @@ docker swarm init
 # Ensure you are logged into GHCR to access PAT Token! See previous step 6. # docker login using env var
 https://youtu.be/fuZoxuBiL9o?si=BmLaBjpVd-Llnrnh&t=678
 docker stack deploy -c ./docker-stack.yaml <name-of-stack>
+# for private GHCR package
+docker stack deploy --with-registry-auth -c ./docker-stack.yaml <name-of-stack>
 
 # To Delete/Clear up docker stack that you dont want run:
 docker stack ls
