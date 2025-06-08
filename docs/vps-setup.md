@@ -164,6 +164,9 @@ https://youtu.be/gqseP_wTZsk?si=TY-p0vGc51AkqSY2
 # Guide to Pushing Docker Images to Github to be easily accessible
 # Build local image (in vscode project powershell terminal)
 # Runs *Dockerfile* instructions
+# # docker build --target production -t <image-name> . #-- run only production build
+# # docker build --target development -t <image-name> . #-- run only development build
+
 docker build -t <image-name> .
 
 # once built, confirm it exists
