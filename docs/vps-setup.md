@@ -210,7 +210,7 @@ docker context use my-webapp-site
 docker context show #--show name of current context
 ```
 
-### 7.1 Remote Deployment -- Setup Docker S 
+### 7.1 Remote Deployment -- Setup Docker Stack
 ```
 https://www.youtube.com/watch?v=fuZoxuBiL9o
 
