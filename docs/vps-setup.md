@@ -192,7 +192,7 @@ LABEL org.opencontainers.image.source=https://github.com/<github-username>/<repo
 
 ```
 
-## 7.Remote Deployment -- Setup Docker Image using Docker Stack 
+## 7.Remote Deployment -- Setup Docker Context 
 ```
 https://www.youtube.com/watch?v=fuZoxuBiL9o
 
