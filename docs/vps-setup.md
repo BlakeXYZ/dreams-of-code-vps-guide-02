@@ -336,6 +336,34 @@ blake@LAPTOP-U8PV5H9S:/mnt/c/users/blake/.../dreams-of-code-vps-guide-02$ docker
 https://youtu.be/fuZoxuBiL9o?si=JG_fRPCKpa0ImBLf&t=1461
 ```
 
+## 10. Ensure DB is non-ephemeral
+```
+# ensure correct docker context and correct container is selected
+docker service ls #-- (look for _db)
+
+# check db data and what it is mounted to
+# mounts dict inside
+docker inspect <container-name-of-db>
+#eg: docker inspect ham-test-08_db
+##### "Source": "ham-test-08_db-data",
+
+docker run --rm -it -v <Source>:/data alpine sh
+#eg: docker run --rm -it -v ham-test-08_db-data:/data alpine sh
+/ # ls -l /data
+exit
+
+docker ps #-- (look for postgres-latest container id)
+docker exec -it <db-container-ID> psql -U postgres -d app
+#eg: docker exec -it c28f177780 psql -U postgres -d app
+
+# you should now be in the PostgresSQL CLI!
+\dt #--  list tables
+\d users #--  describe a table (assuming a table named 'users' exists)
+SELECT * FROM users; #-- will list all data in 'users' table, may need to \q if you cant leave)
+\l #--  list databases
+\q #--  quit
+
+```
 
 
 ## (Optional) Install and Configure Fail2Ban
