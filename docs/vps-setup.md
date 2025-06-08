@@ -192,36 +192,38 @@ LABEL org.opencontainers.image.source=https://github.com/<github-username>/<repo
 
 ```
 
-## 7.Remote Deployment -- Setup Docker Context 
+## 7. Remote Deployment -- Setup Docker Context 
 ```
-https://www.youtube.com/watch?v=fuZoxuBiL9o
-
-Docker Stack allows you to deploy your Docker Compose onto a node that has Docker Swarm enabled
-
-This workflow supports
-- Blue/Green deployment
-- Rolling releases
-- Secure Secrets
-- Rollbacks
-- Remote Deploys
-- CI/CD using GitActions
-- Clustering
-
-
 # Deploy webapp remotely
 # Change Docker Host to that of our VPS using Docker Contexts
 # https://docs.docker.com/engine/manage-resources/contexts/
 # https://youtu.be/fuZoxuBiL9o?si=gKUty9Toy_dBVmp3&t=543
 
 docker context create <name-of-webapp-site> --docker <define-endpoint-to-that-of-ssh-endpoint>
-ex:
+# eg:
 docker context create my-webapp-site --docker "host=ssh://newuser@mywebapp.com"
+docker context create deploy-ham-vs-hot --docker "ssh://burgdeployvps" #-- see step 4.1 for using config! (nano ~/.ssh/config)
 
 # Now can use docker context use, and any commands then will take place in the Docker Instance inside our VPS!
 # allowing us to configure remotely
 docker context use my-webapp-site
 docker context show #--show name of current context
+```
 
+### 7.1 Remote Deployment -- Setup Docker S 
+```
+https://www.youtube.com/watch?v=fuZoxuBiL9o
+
+Docker Stack allows you to deploy your Docker Compose onto a node that has Docker Swarm enabled
+
+This workflow supports
+    - Blue/Green deployment
+    - Rolling releases
+    - Secure Secrets
+    - Rollbacks
+    - Remote Deploys
+    - CI/CD using GitActions
+    - Clustering
 
 # Enable Docker Swarm on VPS
 docker swarm init
@@ -244,7 +246,6 @@ docker stack ls
 docker stack rm <docker-stack-name>
 docker system prune -a --volumes #-- removes any leftover resources
 
- 
 
 ```
 
