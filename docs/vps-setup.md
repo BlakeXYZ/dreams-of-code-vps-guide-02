@@ -338,6 +338,17 @@ blake@LAPTOP-U8PV5H9S:/mnt/c/users/blake/.../dreams-of-code-vps-guide-02$ docker
 
 # with that, ready to add this private key to github repo
 https://youtu.be/fuZoxuBiL9o?si=JG_fRPCKpa0ImBLf&t=1461
+# Navigate to github repository's settings > secrets & variables > actions
+# select 'New Repository Secret'
+$ add private ssh key value that lives inside local .ssh folder
+# Set name as SAME value as defined in github action!
+# e.g. 'DEPLOY_MY_SSH_PRIVATE_KEY'
+# look for e.g. <deploy_webapp_id>, will contain following text:
+## -----BEGIN OPENSSH PRIVATE KEY-----
+# paste into Secret value in Github
+
+# time to create folder .github\workflows\
+# and child file: <deploy-using-github-actions>.yml
 ```
 
 ## 10. Ensure DB is non-ephemeral
