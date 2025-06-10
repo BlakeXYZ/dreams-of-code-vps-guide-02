@@ -191,6 +191,7 @@ docker tag <image-name> ghcr.io/<github-username>/<image-name>:latest
 docker push ghcr.io/<github-username>/<image-name>:latest
 
 # to link this Docker image directly to a repository, add the following to Dockerfile
+# inside === PRODUCTION STAGE ====
 LABEL org.opencontainers.image.source=https://github.com/<github-username>/<repo-name>
 
 ```
