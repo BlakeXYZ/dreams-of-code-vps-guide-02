@@ -4,7 +4,10 @@
 This document goes through the list of steps that I personally take." - dreams-of-code
 
 https://www.youtube.com/watch?v=F-9KWQByeU0
+
 https://www.youtube.com/watch?v=fuZoxuBiL9o
+
+https://youtu.be/gqseP_wTZsk?si=ibuWXj_CYWSLb10d
 
 ## 1. Create a New User with Sudo Permissions
 ```
