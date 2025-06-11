@@ -266,6 +266,11 @@ printf 'mysecretpassword' | docker secret create db-password -
 docker secret ls
 docker secret inspect <secret-ID>
 
+# see docker service logs (for debugging if site is broken)
+docker service logs <service name>
+eg: docker service logs ham-test-gitactions-test_web
+
+
 # store secret in another safe spot
 https://youtu.be/fuZoxuBiL9o?si=nc5AebGJCx_n5q3e&t=904
 
