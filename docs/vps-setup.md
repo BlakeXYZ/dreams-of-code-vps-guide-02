@@ -255,6 +255,15 @@ docker service logs <service name>
 eg: docker service logs ham-test-gitactions-test_web
 
 
+# To Stop + Resume Website
+# This keeps Traefik running, but your backend is unavailable (Traefik will return 404 page not found).
+docker service scale <docker-stack-name>=0
+docker service scale <docker-stack-name>=1
+
+# e.g.
+docker service scale ham-stack-deploy_web=0
+docker service scale ham-stack-deploy_web=1
+
 ```
 
 ## 8. Docker Secret setup
