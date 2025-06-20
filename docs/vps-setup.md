@@ -250,6 +250,9 @@ docker stack ls
 docker stack rm <docker-stack-name>
 docker system prune -a --volumes #-- removes any leftover resources
 
+# If you want to remove every volume (including those in use), run:
+docker volume rm $(docker volume ls -q)
+
 # see docker service logs (for debugging if site is broken)
 docker service logs <service name>
 eg: docker service logs ham-test-gitactions-test_web
