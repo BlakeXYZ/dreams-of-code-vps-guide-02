@@ -380,7 +380,8 @@ docker service ls #-- (look for _db)
 # mounts dict inside
 docker inspect <container-name-of-db>
 #eg: docker inspect ham-test-08_db
-##### "Source": "ham-test-08_db-data",
+##### "Mounts" [
+#####     "Source": "ham-test-08_db-data",
 
 docker run --rm -it -v <Source>:/data alpine sh
 #eg: docker run --rm -it -v ham-test-08_db-data:/data alpine sh
@@ -395,6 +396,7 @@ docker exec -it <db-container-ID> psql -U postgres -d app
 \dt #--  list tables
 \d users #--  describe a table (assuming a table named 'users' exists)
 SELECT * FROM users; #-- will list all data in 'users' table, may need to \q if you cant leave)
+INSERT INTO contestant (contestant_name, contestant_description) VALUES ('Pizza', 'Its pizza time!'); #-- insert into table example
 \l #--  list databases
 \q #--  quit
 
