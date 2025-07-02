@@ -400,6 +400,12 @@ INSERT INTO contestant (contestant_name, contestant_description) VALUES ('Pizza'
 \l #--  list databases
 \q #--  quit
 
+# if health of website is poor after entering bad sql statements, restart the Docker Swarm _web.
+# check docker services
+docker service ls
+docker service update --force <docker_service>
+ex: docker service update --force ham-stack-deploy_web
+
 ```
 
 
