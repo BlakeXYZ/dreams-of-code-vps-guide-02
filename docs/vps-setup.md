@@ -29,6 +29,7 @@ sudo apt update
 ## 2. Set Up SSH Key Authentication
 ```
 # On your local machine (in ubuntu terminal), generate an SSH key pair if you don’t already have one
+# save in example: user@LAPTOP:~/.ssh$ ls --- my_key.pub
 # cd to .ssh 
 # ~/.ssh
 ssh-keygen -t ed25519 -C "<ssh_id_name>"
@@ -36,6 +37,8 @@ ssh-keygen -t ed25519 -C "<ssh_id_name>"
 <ssh_id_name>
 # enter passphrase?
 # enter + save inside keepass
+
+
 
 # Copy the public SSH key to the new user on the server
 ssh-copy-id -i ~/.ssh/<ssh_id_name>.pub <username>@your-server-ip
